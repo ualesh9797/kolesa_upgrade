@@ -6,9 +6,18 @@ class SearchCheckerCest
     // tests
     public function tryToTest(AcceptanceTester $I)
     {
+        $searchInputCss = "#search_query_top";
+        $searchInputXPath = "//*[@id='search_query_top']";
+
+        $searchButtonCss = "#searchbox > button";
+        $searchButtonXPath = "//*[@id='searchbox']/button";
+
+        $productCardCss = ".ajax_block_product";
+        $productCardXPath = "//li[contains(@class, 'ajax_block_product')]";
+
         $I->amOnPage("");
-        $I->fillField("#search_query_top", "Printed dress");
-        $I->click("#searchbox > button");
-        $I->seeNumberOfElements("#center_column > ul > li.ajax_block_product", 5);
+        $I->fillField($searchInputXPath, "Printed dress");
+        $I->click($searchButtonXPath);
+        $I->seeNumberOfElements($productCardXPath, 5);
     }
 }

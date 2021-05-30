@@ -6,13 +6,30 @@ class ModalCheckerCest
     // tests
     public function tryToTest(AcceptanceTester $I)
     {
+
+        $blouseProductCardCss = "#homefeatured > li:nth-child(2)";
+        $blouseProductCardXPath = "//*[@id='homefeatured']/li[2]";
+
+        $quickViewLinkCss = "#homefeatured > li:nth-child(2) a.quick-view";
+        $quickViewLinkXPath = '//*[@id="homefeatured"]/li[2]//a[@class="quick-view"]';
+
+        $modalCss = ".fancybox-overlay > div";
+        $modalXPath = "//*[@class='fancybox-overlay fancybox-overlay-fixed']/div";
+
+
+        $iframeCss = ".fancybox-overlay iframe";
+        $iframeXPath = "//div[contains(@class, 'fancybox-overlay')]//iframe";
+
+        $productTitleCss = "#product h1";
+        $productTitleXPath = "//*[@id='product']//h1";
+
         $I->amOnPage("");
         $I->waitForText("Blouse");
-        $I->moveMouseOver("#homefeatured > li:nth-child(2)");
-        $I->waitForElement("#homefeatured > li:nth-child(2) > div > div.left-block > div > a.quick-view");
-        $I->click("#homefeatured > li:nth-child(2) > div > div.left-block > div > a.quick-view");
-        $I->waitForElement("#index > div.fancybox-overlay.fancybox-overlay-fixed > div");
-        $I->switchToFrame("/html/body/div[2]/div/div/div/div/iframe");
-        $I->waitForText("Blouse", 10, "#product > div > div > div.pb-center-column.col-xs-12.col-sm-4 > h1");
+        $I->moveMouseOver($blouseProductCardXPath);
+        $I->waitForElement($quickViewLinkXPath);
+        $I->click($quickViewLinkXPath);
+        $I->waitForElement($modalXPath);
+        $I->switchToFrame($iframeXPath);
+        $I->waitForText("Blouse", 10, $productTitleXPath);
     }
 }
