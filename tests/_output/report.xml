@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="acceptance" tests="1" assertions="0" errors="0" failures="0" skipped="0" time="5.098549">
+    <testcase file="C:\Users\orazb\kolesa_upgrade\tests\acceptance\FormCest.php" name="checkFillForm" class="Tests\Acceptance\FormCest" feature="check fill form" assertions="0" time="5.098549"/>
+  </testsuite>
+</testsuites>
