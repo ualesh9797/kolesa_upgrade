@@ -4,7 +4,7 @@ on: [push]
 defaults:
   run:
     shell: bash
-    working-directory: lesson10
+    working-directory: ./lesson10
 
 jobs:
   buildAndTest:
