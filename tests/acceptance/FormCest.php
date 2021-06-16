@@ -50,6 +50,6 @@ class FormCest
         $formPage->selectCreditCardCountry();
 
         $I->click(FormPage::$registerButton);
-        $I->waitForText("Good job");
+        $I->waitForText("Good job1");
     }
 }
